@@ -6,6 +6,12 @@ homeBtn.addEventListener("click", () => {
         win.style.display = "none";
         removeTaskbarButton(win);
     });
+
+    // The Song (Lotify) window has its own audio element that keeps
+    // playing even after the window is hidden — stop it explicitly.
+    if (typeof window.stopLotify === "function") {
+        window.stopLotify();
+    }
 });
 
 // About
@@ -27,6 +33,11 @@ experienceBtn.addEventListener("dblclick", () => openWindow(experienceWindow));
 const contactBtn = document.getElementById("contactBtn");
 const contactWindow = document.getElementById("contactWindow");
 contactBtn.addEventListener("dblclick", () => openWindow(contactWindow));
+
+// Lotify (Song)
+const songBtn = document.getElementById("songBtn");
+const songWindow = document.getElementById("songWindow");
+songBtn.addEventListener("dblclick", () => openWindow(songWindow));
 
 // Terminal
 const terminalBtn = document.getElementById("terminalBtn");

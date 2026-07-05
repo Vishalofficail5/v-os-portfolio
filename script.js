@@ -21,7 +21,7 @@ document.getElementById("gameBtn").addEventListener("click", function () {
 });
 // Song
 document.getElementById("songBtn").addEventListener("click", function () {
-    alert("Song Clicked");
+    //alert("Song Clicked");
 });
 //Resume
 document.getElementById("resumeBtn").addEventListener("click", function () {

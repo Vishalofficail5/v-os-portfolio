@@ -7,6 +7,7 @@
     <title>Windows 95-portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="window.css">
+    <link rel="stylesheet" href="song.css">
 </head>
 
 <body>
@@ -385,6 +386,107 @@
         </div>
     </div>
 
+    <!-- LOTIFY (SONG) WINDOW -->
+    <div class="window" id="songWindow" data-window="song">
+
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="assets/icons/Song.png" alt="Lotify">
+                <span class="window-title">Lotify</span>
+            </div>
+            <div class="title-buttons">
+                <div class="title-btn">
+                    <button class="minimizeBtn"><img src="assets/icons/mini.PNG" alt="Minimize"></button>
+                    <span class="btn-tooltip">Minimize</span>
+                </div>
+                <div class="title-btn">
+                    <button class="maximizeBtn"><img src="assets/icons/max.PNG" alt="Maximize"></button>
+                    <span class="btn-tooltip">Maximize</span>
+                </div>
+                <div class="title-btn">
+                    <button class="closeBtn"><img src="assets/icons/Close.PNG" alt="Close"></button>
+                    <span class="btn-tooltip">Close</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="window-content">
+
+                <!-- LANGUAGE PICKER -->
+                <div class="song-lang-view" id="songLangView">
+                    <div class="song-lang-card">
+                        <div class="song-lang-titlebar">Select Language</div>
+                        <div class="song-lang-body">
+                            <img src="assets/icons/Song.png" alt="Lotify" class="song-lang-icon">
+                            <p>Choose which library to load:</p>
+                            <div class="song-lang-btnrow">
+                                <button class="lang-btn" id="langHindiBtn">Hindi</button>
+                                <button class="lang-btn" id="langEnglishBtn">English</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAYER -->
+                <div class="song-player-view" id="songPlayerView">
+                    <div class="song-topbar">
+                        <button class="song-back-btn" id="changeLangBtn">‹ Change Language</button>
+                        <span class="song-lang-tag" id="songLangTag"></span>
+                    </div>
+
+                    <div class="song-art">
+                        <img id="albumArtImg" class="album-art-img" src="assets/icons/Song.png" alt="Album Art">
+                        <div class="song-eq" id="songEq"></div>
+                        <button class="heart-btn" id="heartBtn">&#10084;</button>
+                    </div>
+
+                    <div class="song-track-info">
+                        <div id="trackTitle">—</div>
+                        <div id="trackMeta">—</div>
+                    </div>
+
+                    <div class="song-seek-row">
+                        <span id="songCurTime">0:00</span>
+                        <input type="range" id="songSeek" min="0" max="100" value="0">
+                        <span id="songDurTime">0:00</span>
+                    </div>
+
+                    <div class="song-controls">
+                        <button id="shuffleBtn" title="Shuffle">
+                            <img src="assets/icons/Shuffle.png" alt="Shuffle">
+                        </button>
+                        <button id="prevBtn" title="Previous">&#9198;</button>
+                        <button id="playBtn" title="Play">&#9654;</button>
+                        <button id="nextBtn" title="Next">&#9197;</button>
+                        <button id="repeatBtn" title="Repeat">
+                            <img src="assets/icons/repeat.png" alt="Repeat">
+                        </button>
+                    </div>
+
+                    <div class="song-bottom-row">
+                        <button id="muteBtn" title="Mute">
+                            <img id="muteIcon" class="mute-icon" src="assets/icons/sound.png" alt="Mute">
+                        </button>
+                        <input type="range" id="songVolume" min="0" max="100" value="80" title="Volume">
+                        <button id="queueBtn" title="Playlist">&#9776;</button>
+                    </div>
+
+                    <div class="song-queue-panel" id="songQueuePanel">
+                        <div id="songQueueList"></div>
+                    </div>
+                </div>
+
+                <audio id="songAudio"></audio>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span><b>Ready</b></span>
+            <span><b>Lotify.exe</b></span>
+        </div>
+    </div>
+
     <!-- TERMINAL WINDOW -->
     <div class="window" id="terminalWindow" data-window="terminal">
 
@@ -533,5 +635,6 @@
 <script src="Tooltip.js"></script>
 <script src="terminal.js"></script>
 <script src="clock.js"></script>
+<script src="song.js"></script>
 
 </html>
