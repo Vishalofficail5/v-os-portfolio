@@ -23,12 +23,15 @@ function createTaskbarButton(windowElement) {
     btn.innerHTML = `<img src="${icon}" alt=""><span>${title}</span>`;
 
     btn.addEventListener("click", () => {
-        if (windowElement.style.display === "none") {
-            windowElement.style.display = "flex";
-        }
-        bringToFront(windowElement);
-    });
 
+        if (windowElement.style.display === "none") {
+            openWindow(windowElement);
+            return;
+        }
+
+        bringToFront(windowElement);
+
+    });
     runningApps.appendChild(btn);
     taskbarButtons[id] = btn;
 }
@@ -42,9 +45,31 @@ function removeTaskbarButton(windowElement) {
 }
 
 function openWindow(windowElement) {
+
+    if (windowElement.style.display === "flex") {
+        bringToFront(windowElement);
+        return;
+    }
+
     windowElement.style.display = "flex";
+
+    windowElement.classList.remove(
+        "window-opening",
+        "window-closing",
+        "window-minimize"
+    );
+
+    void windowElement.offsetWidth;
+
+    windowElement.classList.add("window-opening");
+
     bringToFront(windowElement);
     createTaskbarButton(windowElement);
+
+    windowElement.addEventListener("animationend", () => {
+        windowElement.classList.remove("window-opening");
+    }, { once: true });
+
 }
 
 // SETUP EVERY WINDOW
@@ -64,15 +89,34 @@ windows.forEach(windowElement => {
 
     // CLOSE
     closeBtn.addEventListener("click", () => {
-        windowElement.style.display = "none";
-        removeTaskbarButton(windowElement);
+
+        windowElement.classList.remove("window-opening");
+        windowElement.classList.add("window-closing");
+
+        windowElement.addEventListener("animationend", () => {
+
+            windowElement.style.display = "none";
+            windowElement.classList.remove("window-closing");
+            removeTaskbarButton(windowElement);
+
+        }, { once: true });
+
     });
 
     // MINIMIZE
     minimizeBtn.addEventListener("click", () => {
-        windowElement.style.display = "none";
-    });
 
+        windowElement.classList.remove("window-opening");
+        windowElement.classList.add("window-minimize");
+
+        windowElement.addEventListener("animationend", () => {
+
+            windowElement.style.display = "none";
+            windowElement.classList.remove("window-minimize");
+
+        }, { once: true });
+
+    });
     // MAXIMIZE
     maximizeBtn.addEventListener("click", () => {
         windowElement.classList.toggle("maximize");

@@ -186,3 +186,65 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/*Window Animation*/
+
+.window {
+    transform-origin: center;
+}
+
+.window-opening {
+    animation: winOpen .18s ease-out forwards;
+}
+
+.window-closing {
+    animation: winClose .15s ease-in forwards;
+}
+
+.window-minimize {
+    animation: winMinimize .18s ease-in forwards;
+}
+
+@keyframes winOpen {
+
+    0% {
+        opacity: 0;
+        transform: scale(.15);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes winClose {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.15);
+    }
+}
+
+@keyframes winMinimize {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.2);
+    }
+}
