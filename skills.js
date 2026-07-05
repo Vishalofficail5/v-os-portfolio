@@ -15,23 +15,48 @@ const skillList = document.getElementById("skillList");
 skills.forEach(skill => {
     const filled = Math.round((skill.percent / 100) * SEGMENTS);
 
+    // Skill Row
     const row = document.createElement("div");
     row.className = "skill-row";
 
+    // Skill Name
     const label = document.createElement("div");
     label.className = "skill-name";
-    label.innerHTML = `${skill.icon ? `<img src="${skill.icon}" alt="${skill.name}">` : ""}<span>${skill.name} ${skill.percent}%</span>`;
+    label.innerHTML = `
+        ${skill.icon ? `<img src="${skill.icon}" alt="${skill.name}">` : ""}
+        <span>${skill.name}</span>
+    `;
 
+    // Progress Container
+    const progressContainer = document.createElement("div");
+    progressContainer.className = "progress-container";
+
+    // Progress Bar
     const meter = document.createElement("div");
     meter.className = "skill-meter";
 
     for (let i = 0; i < SEGMENTS; i++) {
         const block = document.createElement("div");
-        block.className = "skill-block" + (i < filled ? " filled" : "");
+        block.className = "skill-block";
+
+        if (i < filled) {
+            block.classList.add("filled");
+        }
+
         meter.appendChild(block);
     }
 
+    // Percentage
+    const percent = document.createElement("span");
+    percent.className = "skill-percent";
+    percent.textContent = `${skill.percent}%`;
+
+    // Assemble
+    progressContainer.appendChild(meter);
+    progressContainer.appendChild(percent);
+
     row.appendChild(label);
-    row.appendChild(meter);
+    row.appendChild(progressContainer);
+
     skillList.appendChild(row);
 });
