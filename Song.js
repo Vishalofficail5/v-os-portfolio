@@ -85,8 +85,8 @@
     };
 
 
-    const DEFAULT_ART = "assets/icons/dics1.png"; // vinyl record art — update path if you put it in a subfolder
-    const FALLBACK_ART = "assets/icons/Song.png"; // used only if disc1.png doesn't exist yet
+    const DEFAULT_ART = "assets/icons/dics1.png";
+    const FALLBACK_ART = "assets/icons/Song.png";
 
 
     const VOLUME_ICON_ON = "assets/icons/volume-on.png";
@@ -152,8 +152,7 @@
         songEq.appendChild(bar);
     }
 
-    // ---- floating notes / CRT layer ----
-    const songArt = songEq.parentElement; // the .song-art box from the screenshot
+    const songArt = songEq.parentElement;
     const notesLayer = document.createElement("div");
     notesLayer.className = "song-notes-layer";
     songArt.appendChild(notesLayer);

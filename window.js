@@ -230,7 +230,6 @@ windows.forEach(windowElement => {
     startMenuApps.appendChild(item);
 });
 
-// STATIC ENTRIES: apps that don't open a .window (just trigger their existing click behavior)
 const extraApps = [
 ];
 

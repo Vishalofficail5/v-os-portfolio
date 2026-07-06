@@ -1,7 +1,3 @@
-// Simulated terminal — this is a fake command shell, not a real one.
-// It parses input against a fixed command table and prints canned/generated
-// output. Nothing here executes on your machine or any server.
-
 (function () {
     const screen = document.getElementById("terminalScreen");
     const output = document.getElementById("terminalOutput");
@@ -163,15 +159,12 @@
 
     screen.addEventListener("click", () => input.focus());
 
-    // Boot banner, printed once on page load
     print("Microsoft(R) MS-DOS(R) Version 7.10 — Portfolio Shell");
     print("(C) Copyright Vishal 2026. All rights reserved.");
     print("");
     print("Type 'help' to see available commands.");
     print("");
 
-    // Called by desktop.js when the terminal window is opened, so the
-    // cursor is focused and typing works immediately.
     window.focusTerminal = function () {
         setTimeout(() => input.focus(), 50);
     };
