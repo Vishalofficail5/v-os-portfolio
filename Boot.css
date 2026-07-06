@@ -1,0 +1,211 @@
+.boot-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #000;
+    overflow: hidden;
+}
+
+.boot-screen.boot-hidden {
+    animation: bootFadeOut .4s ease-in forwards;
+    pointer-events: none;
+}
+
+@keyframes bootFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.boot-stage {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.boot-stage.boot-stage-active {
+    display: flex;
+}
+
+/* ---- Stage 1: Phoenix BIOS ---- */
+
+.boot-stage-bios {
+    background: #000;
+    align-items: center;
+    justify-content: center;
+}
+
+.boot-bios-box {
+    font-family: "Consolas", "Courier New", monospace;
+    color: #d8d8d0;
+    font-size: 18px;
+    line-height: 1.9;
+    width: 460px;
+    max-width: 80vw;
+}
+
+.boot-bios-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0;
+}
+
+.boot-bios-bar-outer {
+    width: 220px;
+    height: 16px;
+    background: #1a1a1a;
+    border: 1px solid #666;
+}
+
+.boot-bios-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: #c2b280;
+    transition: width .1s linear;
+}
+
+.boot-bios-percent {
+    font-size: 16px;
+}
+
+.boot-bios-loading {
+    margin-top: 10px;
+}
+
+/* ---- Stages 2 & 4: plain black "Starting Windows 95..." ---- */
+
+.boot-stage-plain {
+    background: #000;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 0 0 36px;
+    box-sizing: border-box;
+}
+
+.boot-plain-text {
+    margin: 0;
+    color: #e8e8e8;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.boot-log-text .boot-log-line {
+    opacity: 0;
+    display: block;
+    animation: bootLogLineIn .15s ease-out forwards;
+}
+
+@keyframes bootLogLineIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---- Stage 3: Windows 95 logo ---- */
+
+.boot-stage-logo {
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, 0) 45%),
+        radial-gradient(ellipse at 75% 65%, rgba(255, 255, 255, .35) 0%, rgba(255, 255, 255, 0) 40%),
+        linear-gradient(180deg, #2f7fd6 0%, #6fb3e8 55%, #bfe0f7 100%);
+}
+
+.boot-logo-sky {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    animation: bootLogoIn .5s ease-out;
+}
+
+@keyframes bootLogoIn {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.boot-flag {
+    width: 110px;
+    height: 110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    transform: skew(-6deg, -4deg);
+}
+
+.boot-flag span {
+    border-radius: 2px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .35);
+}
+
+.boot-flag span:nth-child(1) {
+    background: #ff4d4d;
+}
+
+.boot-flag span:nth-child(2) {
+    background: #3dd15c;
+}
+
+.boot-flag span:nth-child(3) {
+    background: #ffd23d;
+}
+
+.boot-flag span:nth-child(4) {
+    background: #3b9bff;
+}
+
+.boot-wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.boot-wordmark-ms {
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #1a1a1a;
+}
+
+.boot-wordmark-win {
+    font-family: Tahoma, sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.boot-wordmark-win sup {
+    font-size: 20px;
+    font-weight: bold;
+}
+.boot-logo-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+.boot-logo-img{
+    width:300px;
+    height:300px;
+}

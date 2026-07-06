@@ -9,9 +9,56 @@
     <link rel="stylesheet" href="window.css">
     <link rel="stylesheet" href="Song.css">
     <link rel="stylesheet" href="arcade.css">
+    <link rel="stylesheet" href="Boot.css">
 </head>
 
 <body>
+
+    <!-- BOOT SCREEN — 4 stages, see Boot.js -->
+    <div id="bootScreen" class="boot-screen">
+
+        <!-- 1) Phoenix BIOS memory test -->
+        <div class="boot-stage boot-stage-bios boot-stage-active" id="bootStage1">
+            <div class="boot-bios-box">
+                <div>Phoenix BIOS v4.0</div>
+                <div>Memory Test...</div>
+                <div class="boot-bios-bar-row">
+                    <div class="boot-bios-bar-outer">
+                        <div class="boot-bios-bar-fill" id="bootBiosBar"></div>
+                    </div>
+                    <span class="boot-bios-percent" id="bootBiosPercent">0%</span>
+                </div>
+                <div class="boot-bios-loading">Loading <span id="bootBiosDots"></span></div>
+            </div>
+        </div>
+
+        <!-- 2) "Starting Windows 95..." -->
+        <div class="boot-stage boot-stage-plain" id="bootStage2">
+            <div class="boot-plain-text">Starting Windows 95...</div>
+        </div>
+
+        <!-- 3) Windows 95 logo — startup sound starts here -->
+        <div class="boot-stage boot-stage-logo" id="bootStage3">
+            <div class="boot-logo-sky">
+                <div class="boot-logo-sky">
+
+                    <img id="bootLogo" class="boot-logo-img" src="assets/icons/Window start logo.png" alt="Boot Logo">
+
+                    <div class="boot-wordmark">
+                        <span class="boot-wordmark-ms">Microsoft</span>
+                        <span class="boot-wordmark-win">Windows<sup>95</sup></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4) Driver detection log — sound still playing -->
+        <div class="boot-stage boot-stage-plain boot-stage-log" id="bootStage4">
+            <pre class="boot-plain-text boot-log-text" id="bootLogText">Starting Windows 95...</pre>
+        </div>
+
+        <audio id="bootSound" src="assets/sounds/win95-startup.mp3" preload="auto"></audio>
+    </div>
 
     <div class="desktop-icon">
         <button id="homeBtn">
@@ -682,6 +729,7 @@
     </div>
 
 </body>
+<script src="Boot.js"></script>
 <script src="window.js"></script>
 <script src="desktop.js"></script>
 <script src="script.js"></script>
