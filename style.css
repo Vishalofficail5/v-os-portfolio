@@ -59,7 +59,7 @@ body {
 
 .desktop-icon button:hover {
     background: transparent;
-    outline: 1px dotted #020202;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -214,7 +214,7 @@ body {
 
 .About-me button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -321,7 +321,7 @@ body {
 
 .Project button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -453,7 +453,7 @@ body {
 
 .experience button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -499,7 +499,7 @@ body {
 
 .Contact-me button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -545,7 +545,7 @@ body {
 
 .game button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
     width: 50px;
     height: -40px;
@@ -594,7 +594,7 @@ body {
 
 .song button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -640,7 +640,7 @@ body {
 
 .terminal button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -686,7 +686,7 @@ body {
 
 .resume button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -732,7 +732,7 @@ body {
 
 .mail button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -778,7 +778,7 @@ body {
 
 .github button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -824,7 +824,7 @@ body {
 
 .linkedIn button:hover {
     background: transparent;
-    outline: 1px dotted #000000;
+    outline: 1px dotted #8f8d8b;
     outline-offset: 1px;
 }
 
@@ -1096,17 +1096,17 @@ body {
 }
 
 .start-menu-side {
-    width: 28px;
-    background: #959699;
+    width: 42px;
+    background: #a2a3a7;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 33px;
     letter-spacing: 3px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 14px 0;
 }
 
