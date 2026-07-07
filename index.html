@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V-OS-Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="window.css">
-    <link rel="stylesheet" href="Song.css">
-    <link rel="stylesheet" href="arcade.css">
-    <link rel="stylesheet" href="Boot.css">
-    <link rel="stylesheet" href="Shutdown.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/window.css">
+    <link rel="stylesheet" href="style/Song.css">
+    <link rel="stylesheet" href="style/arcade.css">
+    <link rel="stylesheet" href="style/Boot.css">
+    <link rel="stylesheet" href="style/Shutdown.css">
 </head>
 
 <head>
@@ -21,27 +21,8 @@
 <body>
 
     <div id="bootScreen" class="boot-screen">
-
-        <div class="boot-stage boot-stage-bios boot-stage-active" id="bootStage1">
-            <div class="boot-bios-box">
-                <div>Phoenix BIOS v4.0</div>
-                <div>Memory Test...</div>
-                <div>“DISClAIMER------⚠This project is a personal portfolio inspired by the classic user interface of Microsoft Windows
-                    98. This project is for educational and personal demonstration purposes only and is not affiliated
-                    with or endorsed by Microsoft.”</div>
-                <div class="boot-bios-bar-row">
-                    <div class="boot-bios-bar-outer">
-                        <div class="boot-bios-bar-fill" id="bootBiosBar"></div>
-                    </div>
-                    <span class="boot-bios-percent" id="bootBiosPercent">0%</span>
-                </div>
-                <div class="boot-bios-loading">Loading <span id="bootBiosDots"></span></div>
-                <div class="boot-press-key" id="bootPressKey">Press any key to continue_</div>
-            </div>
-        </div>
-
-        <div class="boot-stage boot-stage-plain" id="bootStage2">
-            <div class="boot-plain-text">Starting V-OS...</div>
+        <div class="boot-stage boot-stage-plain boot-stage-active" id="bootStage4">
+            <pre class="boot-plain-text boot-log-text" id="bootLogText">Starting V-OS...</pre>
         </div>
 
         <div class="boot-stage boot-stage-logo" id="bootStage3">
@@ -56,10 +37,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="boot-stage boot-stage-plain boot-stage-log" id="bootStage4">
-            <pre class="boot-plain-text boot-log-text" id="bootLogText">Starting V-OS...</pre>
         </div>
 
         <audio id="bootSound" src="assets/sounds/win95-startup.mp3" preload="auto"></audio>
@@ -181,20 +158,15 @@
                         <h1>Hello, I'm Vishal</h1>
                         <h3>Third Year B.Tech AI & DS</h3>
                         <hr>
-                        <h3><b><u>*Skills*</u></b></h3>
+                        <h3><b><u>Skills</u></b></h3>
                         <div class="skills">
                             <p> AI <span>•</span> Python <span>•</span> Web(HTML,CSS,JS) </p>
                             <p> Java <span>•</span> C++ <span>•</span> C <span>•</span> Git & GitHub </p>
                         </div>
                         <hr>
-                        <h3><b><u>*Current Focus*</u></b></h3>
+                        <h3><b><u>Current Focus</u></b></h3>
                         <p>
                             <b>Learning:—</b>Machine Learning, Deep Learning, Computer Vision, LLMs.
-                        </p>
-                        <p>
-                            <b>V-OS Portfolio:—</b> Building a Windows 98-inspired portfolio with custom desktop
-                            apps,games,
-                            animations, music player, startup/shutdown sequence, and modern JavaScript.
                         </p>
                         <p>
                             <b>AI Research:—</b> Benchmarking Vision Language Models (Qwen2-VL, Phi-3, LLaVA,
@@ -202,8 +174,7 @@
                             road-scene understanding, object counting, and image description tasks.
                         </p>
                         <p>
-                            <b>Exploring:—</b> Hugging Face Transformers, model fine-tuning, quantization (PTQ vs
-                            QLoRA), RAG, and AI agents.
+                            <b>Exploring:—</b> Hugging Face Transformers, model fine-tuning, quantization, RAG, and AI agents.
                         </p>
                         <p>
                             <b>Currently reading:—</b> Papers on multimodal AI, efficient LLM inference, and computer
@@ -218,14 +189,13 @@
                             applications with clean, efficient architecture.
                         </p>
                         <hr>
-                        <h3><b><u>*Education*</u></b></h3>
+                        <h3><b><u>Education</u></b></h3>
                         <div class="school">
                             <div class="top">
                                 <h4><u>B.Tech. Artificial Intelligence & Data Science</u></h4>
-                                <span>Present</span>
+                                <span>2024-2028</span>
                             </div>
-                            <p>Dr.Akhilesh Das Gupta Institute of Professional Studies(ADGIPS)</p>
-                            <p>Guru Gobind Singh Indraprastha University (GGSIPU)</p>
+                            <p>Dr.Akhilesh Das Gupta Institute of Professional Studies</p>
                         </div>
 
                         <div class="school">
@@ -307,7 +277,7 @@
                 <div class="projects-container">
                     <h1>My Projects</h1>
                     <hr>
-                    <div class="project-card">
+                    <!-- <div class="project-card">
                         <img src="assets/icons/Projectt.png" alt="Project">
                         <div class="project-info">
                             <h2>V-OS Portfolio</h2>
@@ -325,7 +295,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="project-card">
                         <img src="assets/icons/Projectt.png" alt="Project">
@@ -919,15 +889,14 @@
     </div>
 
 </body>
-<script src="Boot.js"></script>
-<script src="Shutdown.js"></script>
-<script src="window.js"></script>
-<script src="desktop.js"></script>
-<script src="script.js"></script>
-<script src="Tooltip.js"></script>
-<script src="Terminal.js"></script>
-<script src="Clock.js"></script>
-<script src="Song.js"></script>
-<script src="arcade.js"></script>
+<script src="js/Boot.js"></script>
+<script src="js/Shutdown.js"></script>
+<script src="js/window.js"></script>
+<script src="js/desktop.js"></script>
+<script src="js/Tooltip.js"></script>
+<script src="js/Terminal.js"></script>
+<script src="js/Clock.js"></script>
+<script src="js/Song.js"></script>
+<script src="js/arcade.js"></script>
 
 </html>

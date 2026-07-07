@@ -31,71 +31,7 @@
     display: flex;
 }
 
-/* ---- Stage 1: Phoenix BIOS ---- */
-
-.boot-stage-bios {
-    background: #000;
-    align-items: center;
-    justify-content: center;
-}
-
-.boot-bios-box {
-    font-family: "Consolas", "Courier New", monospace;
-    color: #d8d8d0;
-    font-size: 18px;
-    line-height: 1.9;
-    width: 460px;
-    max-width: 80vw;
-}
-
-.boot-bios-bar-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 4px 0;
-}
-
-.boot-bios-bar-outer {
-    width: 220px;
-    height: 16px;
-    background: #1a1a1a;
-    border: 1px solid #666;
-}
-
-.boot-bios-bar-fill {
-    height: 100%;
-    width: 0%;
-    background: #c2b280;
-    transition: width .1s linear;
-}
-
-.boot-bios-percent {
-    font-size: 16px;
-}
-
-.boot-bios-loading {
-    margin-top: 10px;
-}
-
-.boot-press-key {
-    margin-top: 26px;
-    color: #d8d8d0;
-    animation: bootPressKeyBlink 1s step-end infinite;
-}
-
-@keyframes bootPressKeyBlink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
-/* ---- Stages 2 & 4: plain black "Starting V-OS..." ---- */
+/* ---- Plain black startup stage ---- */
 .boot-stage-plain {
     background: #000;
     align-items: flex-start;

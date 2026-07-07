@@ -8,7 +8,7 @@
 /* Desktop */
 body {
     background-color: #020278;
-    background-image: url(assets/icons/windowexe.jpg);
+    background-image: url("../assets/icons/windowexe.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

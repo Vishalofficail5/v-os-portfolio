@@ -18,7 +18,6 @@
             "Intern — Railway Coach Care Center\n" +
             "Certifications: NSIC AutoCAD, Google Cloud Generative AI",
         "projects.txt":
-            "V-OS Portfolio — HTML / CSS / JavaScript\n" +
             "Library Management System — Java / MySQL\n" +
             "Weather App — JavaScript / public API\n" +
             "Roadscapes-VLM-Comparison — benchmarking Phi-3, Qwen2-VL, LLaVA, PaliGemma\n" +
@@ -159,7 +158,7 @@
 
     screen.addEventListener("click", () => input.focus());
 
-    print("Microsoft(R) MS-DOS(R) Version 7.10 — Portfolio Shell");
+    print("VOS(R) V-DOS(R) Version 7.10 — Portfolio Shell");
     print("(C) Copyright Vishal 2026. All rights reserved.");
     print("");
     print("Type 'help' to see available commands.");
