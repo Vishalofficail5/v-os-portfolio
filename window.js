@@ -214,5 +214,9 @@ document.getElementById("restartBtn").addEventListener("click", () => {
 
 // SHUT DOWN
 document.getElementById("shutdownBtn").addEventListener("click", () => {
-    document.body.innerHTML = `<div class="shutdown-screen">It's not safe to turn off your computer.</div>`;
+    if (typeof window.startShutdownSequence === "function") {
+        window.startShutdownSequence();
+    } else {
+        document.body.innerHTML = `<div class="shutdown-screen">It's not safe to turn off your computer.</div>`;
+    }
 });

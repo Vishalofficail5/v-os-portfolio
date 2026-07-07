@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="Song.css">
     <link rel="stylesheet" href="arcade.css">
     <link rel="stylesheet" href="Boot.css">
+    <link rel="stylesheet" href="Shutdown.css">
 </head>
 <head>
     <title>My Portfolio</title>
@@ -35,6 +36,7 @@
                     <span class="boot-bios-percent" id="bootBiosPercent">0%</span>
                 </div>
                 <div class="boot-bios-loading">Loading <span id="bootBiosDots"></span></div>
+                <div class="boot-press-key" id="bootPressKey">Press any key to continue_</div>
             </div>
         </div>
 
@@ -64,6 +66,57 @@
         </div>
 
         <audio id="bootSound" src="assets/sounds/win95-startup.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- SHUTDOWN CONFIRM DIALOG -->
+    <div class="shutdown-overlay" id="shutdownOverlay">
+        <div class="shutdown-dialog">
+            <div class="shutdown-dialog-titlebar">
+                <span>Shut Down Windows</span>
+                <button class="shutdown-dialog-x" id="shutdownDialogX">&times;</button>
+            </div>
+            <div class="shutdown-dialog-body">
+                <img class="shutdown-dialog-icon" src="assets/icons/windowexe.jpg" alt="">
+                <div class="shutdown-dialog-content">
+                    <p>Are you sure you want to:</p>
+                    <label class="shutdown-radio-row">
+                        <input type="radio" name="shutdownAction" value="shutdown" checked>
+                        Shut down the computer?
+                    </label>
+                    <label class="shutdown-radio-row">
+                        <input type="radio" name="shutdownAction" value="restart">
+                        Restart the computer?
+                    </label>
+                    <label class="shutdown-radio-row">
+                        <input type="radio" name="shutdownAction" value="msdos">
+                        Restart the computer in MS-DOS mode?
+                    </label>
+                    <label class="shutdown-radio-row">
+                        <input type="radio" name="shutdownAction" value="logon">
+                        Close all programs and log on as a different user?
+                    </label>
+                </div>
+            </div>
+            <div class="shutdown-dialog-actions">
+                <button id="shutdownYesBtn">Yes</button>
+                <button id="shutdownNoBtn">No</button>
+                <button id="shutdownHelpBtn">Help</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHUTDOWN: sky "please wait" stage -->
+    <div class="shutdown-wait-screen" id="shutdownWaitScreen">
+        <div class="shutdown-wait-text" id="shutdownWaitText">Please wait while your computer<br>shuts down.</div>
+        <div class="boot-wordmark">
+            <span class="boot-wordmark-ms">Soft</span>
+            <span class="boot-wordmark-win">V<sup>OS</sup></span>
+        </div>
+    </div>
+
+    <!-- SHUTDOWN: final black stage -->
+    <div class="shutdown-final-screen" id="shutdownFinalScreen">
+        <div class="shutdown-final-text">It's now safe to turn off<br>your computer.</div>
     </div>
 
     <div class="desktop-icon">
@@ -873,6 +926,7 @@
 
 </body>
 <script src="Boot.js"></script>
+<script src="Shutdown.js"></script>
 <script src="window.js"></script>
 <script src="desktop.js"></script>
 <script src="script.js"></script>

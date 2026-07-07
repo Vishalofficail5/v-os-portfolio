@@ -12,6 +12,7 @@
     const dotsEl = document.getElementById("bootBiosDots");
     const logText = document.getElementById("bootLogText");
     const sound = document.getElementById("bootSound");
+    const pressKeyEl = document.getElementById("bootPressKey");
 
     const LOG_LINES = [
         "",
@@ -64,13 +65,9 @@
         const attempt = sound.play();
         if (attempt && attempt.catch) {
             attempt.catch(() => {
-                const resume = () => {
-                    sound.play().catch(() => {});
-                    document.removeEventListener("click", resume);
-                    document.removeEventListener("keydown", resume);
-                };
-                document.addEventListener("click", resume, { once: true });
-                document.addEventListener("keydown", resume, { once: true });
+                // Shouldn't happen now that playback is gated behind the
+                // press-any-key step below, but don't let a rejected
+                // promise throw an unhandled error into the console.
             });
         }
     }
@@ -106,19 +103,36 @@
         }, { once: true });
     }
 
+    function waitForKey(onDone) {
+        if (!pressKeyEl) {
+            onDone();
+            return;
+        }
+        const go = () => {
+            document.removeEventListener("click", go);
+            document.removeEventListener("keydown", go);
+            pressKeyEl.style.display = "none";
+            onDone();
+        };
+        document.addEventListener("click", go, { once: true });
+        document.addEventListener("keydown", go, { once: true });
+    }
+
     // ---- run the sequence ----
     showStage(stage1);
-    runBiosBar(() => {
-        runDots(() => {
-            showStage(stage2);
-            setTimeout(() => {
-                showStage(stage3);
-                playBootSound();
+    waitForKey(() => {
+        runBiosBar(() => {
+            runDots(() => {
+                showStage(stage2);
                 setTimeout(() => {
-                    showStage(stage4);
-                    typeLogLines(finishBoot);
-                }, 2200);
-            }, 700);
+                    showStage(stage3);
+                    playBootSound();
+                    setTimeout(() => {
+                        showStage(stage4);
+                        typeLogLines(finishBoot);
+                    }, 2200);
+                }, 700);
+            });
         });
     });
 })();

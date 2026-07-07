@@ -77,6 +77,24 @@
     margin-top: 10px;
 }
 
+.boot-press-key {
+    margin-top: 26px;
+    color: #d8d8d0;
+    animation: bootPressKeyBlink 1s step-end infinite;
+}
+
+@keyframes bootPressKeyBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 /* ---- Stages 2 & 4: plain black "Starting V-OS..." ---- */
 
 .boot-stage-plain {
