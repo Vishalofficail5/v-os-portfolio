@@ -216,6 +216,7 @@
     font-size: 20px;
     font-weight: bold;
 }
+
 .boot-logo-img {
     width: 180px;
     height: 180px;
@@ -223,7 +224,8 @@
     user-select: none;
     pointer-events: none;
 }
-.boot-logo-img{
-    width:300px;
-    height:300px;
+
+.boot-logo-img {
+    width: 300px;
+    height: 300px;
 }
